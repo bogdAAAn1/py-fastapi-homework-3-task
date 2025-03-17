@@ -317,6 +317,5 @@ async def refresh_token(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found."
         )
-
     new_access_token = jwt_manager.create_access_token({"user_id": user_id})
     return TokenRefreshResponseSchema(access_token=new_access_token)
